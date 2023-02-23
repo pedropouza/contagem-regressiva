@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <img src="imagens/theweeknd.jpg" alt="foto the weeknd">
+        <div id="countdown">
+            <div id="days"></div>
+            <div id="hours"></div>
+            <div id="minutes"></div>
+            <div id="seconds"></div>
+        </div>
+    </div>
+
+    <script>
+        function countdown() {
+            const targetDate = new Date('2023-06-06'); // data alvo (no formato ano-mês-dia)
+            const currentDate = new Date(); // data atual
+            const diff = targetDate - currentDate; // diferença em milissegundos
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24)); // dias restantes
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24); // horas restantes
+            const minutes = Math.floor((diff / 1000 / 60) % 60); // minutos restantes
+            const seconds = Math.floor((diff / 1000) % 60); // segundos restantes
+
+            const countdownDays = document.getElementById('days');
+            const countdownHours = document.getElementById('hours');
+            const countdownMinutes = document.getElementById('minutes');
+            const countdownSeconds = document.getElementById('seconds');
+
+            countdownDays.innerHTML = `<p>${days} <br><span>dias</span><p>`;
+            countdownHours.innerHTML = `<p>${hours} <br><span>horas</span></p>`;
+            countdownMinutes.innerHTML = `<p>${minutes} <br><span>minutos</span></p>`;
+            countdownSeconds.innerHTML = `<p>${seconds} <br><span>segundos</span></p>`;
+        }
+        setInterval(countdown, 1000); // atualiza a contagem a cada segundo
+    </script>
+
+</body>
+</html>
