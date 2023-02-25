@@ -27,15 +27,63 @@ body {
     align-items: center;
 }
 
-img {
-    height: 190px;
+#img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 180px;
+    width: 110px;
     border-radius: 20%;
+
     box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.668);
     transition: 0.5s;
 }
 
-img:hover {
-    filter: grayscale(100%);
+#img p {
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    background-color: #33333351;
+    z-index: 1;
+}
+
+#img img.spotify {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#img #principal {
+    position: absolute;
+    border-radius: 20%;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: 0.7s;
+}
+
+#img:hover img.spotify {
+    opacity: 1;
+}
+
+#img:hover #principal {
+    opacity: 0.3;
+}
+
+#container a {
+    border-radius: 20%;
+    text-decoration: none;
+    color: white;
+    font-size: 0.6em;
+    text-shadow: 1px 1px 1px black;
 }
 
 #titulo {
