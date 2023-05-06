@@ -37,7 +37,7 @@
             const diff = targetDate - currentDate; // diferença em milissegundos
 
             const days = Math.floor(diff / (1000 * 60 * 60 * 24)); // dias restantes
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24 - 1); // horas restantes (-1 pelo horário de verão)
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24); // horas restantes
             const minutes = Math.floor((diff / 1000 / 60) % 60); // minutos restantes
             const seconds = Math.floor((diff / 1000) % 60); // segundos restantes
 
